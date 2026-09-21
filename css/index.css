@@ -1,39 +1,201 @@
+@import url("https://googleapis.com/css?family=Poppins");
 *{
     margin:0px;
     padding:0px;
 
 }
-header{
-    background-color: aqua;
-    padding:20px;
-
+.navBar{
+    background:hsl(208, 100%, 100%);
+    padding:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 .links{
-    display: flex;
-    justify-content: space-evenly; 
-
+    border:1px solid grey;
+    padding:30px;
+    border-radius:10px;
+    display:flex;
+    gap:30px;
 }
 .links a{
     text-decoration: none;
 }
 body{
+    font-family:"Poppins",sans-serif;
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size:larger;
 }
 .Page{
 display: flex;
 flex-direction: column;
-align-items: center;
-justify-content:center;
 padding:20px;
+background:aliceblue;
 
 }
 .About{
-    align-items:center;
-    flex-direction:column;
+    margin-top:150px;
+    width:100%;
     display:flex;
+    justify-content:space-evenly;    
 }
 .About p{
     padding:20px;
+}
+.ProfileImg img{
+    border-radius:10px;
+}
+.Profile{
+    width:600px;
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+}
+
+
+.Profile h1{
+    font-size:4.5em;
+}
+.Profile span{
+    color:blue;
+}
+.Profile p{
+    padding-top:70px;
+    font-size:2em;
+}
+
+.socials-container{
+    display:flex;
+    gap:30px;
+    
+}
+.socials{
+    display:flex;
+    padding-left:40px;
+    width:100%;
+    
+}
+.MyInfo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:100px;
+}
+.InfoCard{
+    box-shadow:0 0 20px 10px grey;
+     background:white;
+    border:1px solid grey;
+    padding:20px;
+    width:700px;
+    border:none;
+    border-radius:10px;
+}
+.InfoCard p{
+    font-size:1.5em;
+}
+.Email{
+    margin-top:40px;
+    padding-bottom:10px;
+    border:1px solid grey;
+    padding:20px;
+    background:rgba(128, 128, 128, 0.232);
+    border-radius:5px;
+    border:none;
+}
+.emailpng{
+    display:flex;
+    align-items:center;
+    margin-bottom:10px;
+    gap:20px;
+}
+.myemail p{
+    color:grey;
+
+}
+.details{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.mylocation p{
+    color:grey;
+}
+.location{
+    border:1px solid grey;
+    padding:20px;
+    background:rgba(128, 128, 128, 0.232);
+    border:none;
+    border-radius:5px;
+}
+.locationpng{
+    display:flex;
+    align-items:center;
+    margin-bottom:10px;
+    gap:20px;
+}
+.edupng{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:10px;
+}
+.education{
+    border:1px solid grey;
+    padding:20px;
+    background:rgba(128, 128, 128, 0.232);
+    border:none;
+    border-radius:5px;
+}
+.myedu p{
+    color:grey;
+}
+.AcademicCard{
+    font-size:x-large;
+    border:1px solid lightblue;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    background:hsl(0, 0%, 50%);
+    width:100%;
+}
+.Academic h2{
+    margin-bottom:20px;
+}
+.AcademicCard h3{
+    color:white;
+}
+.AcademicCard p{
+    color:white;
+}
+.Info-Academia{
+    margin-top:50px;
+    display:flex;
+    gap:70px;
+}
+.Timeline{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.lang{
+    border:1px solid rgb(7, 26, 172);
+    width:fit-content;
+    padding:5px;
+    border-radius:10px;
+    background:rgba(224, 225, 228, 0.508);
+}
+.stackWrapper{
+    display:flex;
+    gap:10px;
+    padding:20px;
+    font-size:small;
+}
+.stack{
+    margin-top:30px;
 }
