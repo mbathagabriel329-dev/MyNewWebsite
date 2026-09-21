@@ -161,11 +161,12 @@ background:aliceblue;
     display:flex;
     flex-direction:column;
     gap:10px;
-    background:hsl(0, 0%, 50%);
+    background:hsl(208, 100%, 70%);
     width:100%;
 }
 .Academic h2{
     margin-bottom:20px;
+    color:rgb(20, 20, 226);
 }
 .AcademicCard h3{
     color:white;
