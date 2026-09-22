@@ -442,6 +442,7 @@ footer{
     
 }
 @media(max-width:768px){
+   
 .Page{
     margin:0;
     padding:0;
@@ -517,6 +518,9 @@ footer{
         font-size:x-small;
         width:300px;
     }
+    .Profile h1{
+        font-size:3em;
+    }
     .socials img{
         width:40px;
     }
@@ -579,6 +583,7 @@ footer{
     #Projects{
         background:none;
         border:none;
+        outline:none;
         margin-top:20px;
 
     }
