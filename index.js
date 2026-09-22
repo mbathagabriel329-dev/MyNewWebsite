@@ -1,8 +1,6 @@
 let toggleOpen=document.getElementById("menu-toggle");
 let menu=document.getElementById("menu");
 
-
-let transform="transformY(-100px)";
 let isOpen=false;
 function showMenu(){
     console.log("function called")

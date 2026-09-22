@@ -447,6 +447,9 @@ footer{
     padding:0;
 
 }
+.logo img{
+    width:50px;
+}
     .navBar{
         z-index:2;
     }
@@ -454,16 +457,16 @@ footer{
         display:block;
         backdrop-filter: blur(30px);
         position:sticky;
-        top:124px;
+        top:75px;
         right:0;
         height:auto;
         z-index:1;
-        transform:translateY(-100%);
+        transform:translateY(-200%);
         transition:transform 0.5s ease;
     
     }
     #menu.show{
-        transform:translateY(0);
+        transform:translateY(0px);
     }
     #menu ul{
      background:rgba(255, 255, 255, 0.616);
