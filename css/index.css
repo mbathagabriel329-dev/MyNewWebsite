@@ -1,15 +1,26 @@
 @import url("https://googleapis.com/css?family=Poppins");
 *{
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
 
 }
+html{
+    scroll-behavior: smooth;
+    margin:0;
+}
 .navBar{
-    background:hsl(208, 100%, 100%);
+    background:hsla(0, 0%, 100%, 0.724);
     padding:10px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    backdrop-filter:blur(20px);
+    position:sticky;
+    top:0;
+    z-index:1;
+}
+#menu-toggle{
+    display:none;
 }
 .links{
     border:1px solid grey;
@@ -20,43 +31,110 @@
 }
 .links a{
     text-decoration: none;
+    color:blue;
+    position:relative;
+   
+}
+.links a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:0%;
+    height:2px;
+    background:blue;
+    transition: width 0.4s ease-in-out;
+}
+.links a:hover::after{
+    width:100%;
 }
 body{
     font-family:"Poppins",sans-serif;
     display:flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height:100vh;
     font-size:larger;
 }
 .Page{
+position:relative;
 display: flex;
 flex-direction: column;
-padding:20px;
-background:aliceblue;
+
+background:linear-gradient(to bottom right,rgb(201, 226, 248),white);
 
 }
-.About{
-    margin-top:150px;
+#moving-strip{
     width:100%;
+    overflow:hidden;
+    margin-top:50px;
+    background:blue;
+    padding:20px;
+    margin:0;
+    padding:15px 0;
+    
+
+}
+
+#menu{
+    display:none;
+}
+.strips{
+    gap:90px;
+    display:flex;
+    width:max-content;
+    border-right:10px;
+    animation:move-strip 15s linear infinite;
+}
+.strips ul{
+    color:white;
+    display:flex;
+    list-style:circle;
+    gap:90px;
+    font-size:1.2em;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+@keyframes move-strip{
+    0%{
+       transform: translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+#About{
+    margin-top:150px;
     display:flex;
     justify-content:space-evenly;    
 }
-.About p{
+#About p{
     padding:20px;
 }
 .ProfileImg img{
-    border-radius:10px;
+    border-radius:50px 50px 0 0;
+    border:19px solid rgba(255, 255, 255, 0.474);
+    backdrop-filter: blur(20px);
 }
 .Profile{
-    width:600px;
-    align-items:center;
+    width:700px;
+    align-items:left;
     display:flex;
     flex-direction:column;
+
 }
 
-
+.freelance{
+ display:flex;
+ align-items:center;
+ }
+.freelance img{
+    border:none;
+}
 .Profile h1{
-    font-size:4.5em;
+    font-size:4em;
+    margin-left:10px;
 }
 .Profile span{
     color:blue;
@@ -71,37 +149,52 @@ background:aliceblue;
     gap:30px;
     
 }
+.socials-container img{
+    transition:transform 0.3s ease-in-out;
+}
+.socials-container:hover img{
+    transform:scale(1.4);
+}
 .socials{
     display:flex;
-    padding-left:40px;
+    padding-left:20px;
     width:100%;
     
 }
-.MyInfo{
+#MyInfo{
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     margin-top:100px;
 }
+#MyInfo h2{
+    margin-bottom:70px;
+}
 .InfoCard{
-    box-shadow:0 0 20px 10px grey;
-     background:white;
-    border:1px solid grey;
+     background: transparent;
+     border:1px solid white;
+     border-radius:10px;
     padding:20px;
-    width:700px;
-    border:none;
-    border-radius:10px;
+    width:600px;
+  transition: border-color 0.3s ease, transform 0.3s ease-in-out;
 }
 .InfoCard p{
     font-size:1.5em;
 }
+.InfoCard:hover{
+    transform:translateY(-5px);
+    border-color:aqua;
+       box-shadow:0 0 20px 10px lightblue;
+}
 .Email{
     margin-top:40px;
     padding-bottom:10px;
-    border:1px solid grey;
+    border:1px solid rgba(128, 128, 128, 0.49);
+    backdrop-filter: blur(50px);
     padding:20px;
-    background:rgba(128, 128, 128, 0.232);
+    background:rgba(255, 255, 255, 0.378);
+    backdrop-filter:blur(50px);
     border-radius:5px;
     border:none;
 }
@@ -111,6 +204,7 @@ background:aliceblue;
     margin-bottom:10px;
     gap:20px;
 }
+
 .myemail p{
     color:grey;
 
@@ -127,7 +221,8 @@ background:aliceblue;
 .location{
     border:1px solid grey;
     padding:20px;
-    background:rgba(128, 128, 128, 0.232);
+      background:rgba(255, 255, 255, 0.378);
+    backdrop-filter:blur(50px);
     border:none;
     border-radius:5px;
 }
@@ -146,7 +241,8 @@ background:aliceblue;
 .education{
     border:1px solid grey;
     padding:20px;
-    background:rgba(128, 128, 128, 0.232);
+     background:rgba(255, 255, 255, 0.378);
+    backdrop-filter:blur(50px);
     border:none;
     border-radius:5px;
 }
@@ -161,12 +257,21 @@ background:aliceblue;
     display:flex;
     flex-direction:column;
     gap:10px;
-    background:hsl(208, 100%, 70%);
+    background:lightskyblue;
+    backdrop-filter:blur(50px);
     width:100%;
+    transition:transform 0.3s ease-in-out;
 }
-.Academic h2{
+.AcademicCard h1{
+    font-family:monospace;
+}
+.AcademicCard:hover{
+ border-color:blue;
+ transform:translateY(-5px);
+}
+#Academic h1{
     margin-bottom:20px;
-    color:rgb(20, 20, 226);
+    color:rgb(0, 0, 255);
 }
 .AcademicCard h3{
     color:white;
@@ -183,20 +288,279 @@ background:aliceblue;
     display:flex;
     flex-direction:column;
     gap:10px;
+    width:100%;
 }
-.lang{
-    border:1px solid rgb(7, 26, 172);
-    width:fit-content;
-    padding:5px;
-    border-radius:10px;
-    background:rgba(224, 225, 228, 0.508);
+
+.MoreAcademics button{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    padding:20px;
+    width:100%;
+    background:whitesmoke;
+    color:blue;
+    font-size:23px;
+    border:none;
+    transition:background-color 0.3s ease ;
+}
+.MoreAcademics button:hover{
+    background-color:lightskyblue;
+}
+.lang img{
+    width:50px;
+    transition:transform 0.2s ease-in-out;
 }
 .stackWrapper{
     display:flex;
-    gap:10px;
-    padding:20px;
+    gap:20px;
     font-size:small;
 }
+.lang:hover img{
+    transform:translateY(-5px);
+}
+.projectStack{
+    display:flex;
+    gap:20px;
+    padding:20px;
+}
+.tech{
+    border:1px solid lightslategray;
+    border-radius:10px;
+    padding:2px 15px;
+    background:lightcyan;
+    
+}
 .stack{
-    margin-top:30px;
+    margin-top:20px;
+}
+.stack h2{
+    color:blue;
+    
+}
+#Projects{
+    
+    border:1px solid rgb(166, 210, 249);
+    border-radius:100px;
+    background:linear-gradient(to bottom right,rgba(173, 216, 230, 0.757),rgba(0, 255, 255, 0.557));
+    font-size:1.5em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin-top:100px;
+}
+#Projects h2{
+    padding:10px;
+}
+.ProjectCard{
+    border:1px solid transparent;
+    width:400px;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    background:rgba(255, 255, 255, 0.709);
+    backdrop-filter:blur(50px);
+    overflow:hidden;
+}
+.ProjectImg img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    transition:transform 0.3s ease-in-out;
+}
+
+.ProjectCard:hover img{
+    transform:scale(1.07);
+}
+.ProjectDescription{
+    padding:10px;
+}
+.ProjectCard:hover button{
+    color:blue;
+}
+
+.ProjectDescription button{
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
+    gap:10px;
+    font-size:15px;
+    border-radius:10px;
+    background:white;
+    border-color:aqua;
+ 
+}
+.ProjectsContainer{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    gap:20px;
+    padding-bottom:40px;
+}
+#Gallery{
+    text-align:center;
+    margin-top:150px;
+}
+.gallery-container{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    margin-top:100px;
+    overflow:hidden;
+   
+}
+.gallery-strip{
+    width:max-content;
+    display:flex;
+    gap:20px;
+    margin-right:20px;
+    white-space:nowrap;
+    animation:move-gallery 20s linear infinite;
+}
+.galleryImg{
+    width:350px;
+}
+.galleryImg img{
+    width:100%;
+    object-fit:fill;
+}
+@keyframes move-gallery{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+footer{
+    background:rgba(231, 227, 227, 0.661);
+    padding:50px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+    
+}
+@media(max-width:700px){
+
+    .navBar{
+        z-index:2;
+    }
+    #menu{
+        display:block;
+        backdrop-filter: blur(30px);
+        position:sticky;
+        top:124px;
+        right:0;
+        height:auto;
+        z-index:1;
+        transform:translateY(-100%);
+        transition:transform 0.5s ease;
+    
+    }
+    #menu.show{
+        transform:translateY(0);
+    }
+    #menu ul{
+     background:rgba(255, 255, 255, 0.616);
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        list-style:none;
+        gap:4%;
+        padding:20px 0;
+        
+    }
+    #menu a{
+         text-decoration: none;
+        color:blue;
+    }
+    #menu-toggle{
+        display:block;
+
+    }
+    .links{
+        display:none;
+    }
+    #moving-strip{
+        display:none;
+    }
+    .freelance{
+        display:flex;
+        flex-direction:column;
+        color:green;
+    }
+    .freelance img{
+        width:10px;
+    }
+    .ProfileImg{
+        display:flex;
+        justify-content:left;
+        align-items:center;
+       
+    }
+  
+    .ProfileImg img{
+        width:200px;
+        height:200px;
+        border-radius:50px 50px 50px 50px;
+    }
+    .Profile{
+        font-size:0.8em;
+        width:400px;
+    }
+    .socials img{
+        width:40px;
+    }
+    #About{
+         padding-left:20px;
+        margin-top:40px;
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+    #MyInfo h1{
+        font-size:large;
+    }
+    .Info-Academia{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .InfoCard{
+        font-size:small;
+        width:400px;
+    }
+ 
+    .AcademicCard{
+        font-size:medium;
+        width:400px;
+    }
+    .ProjectCard{
+        width:350px;
+        font-size:small;
+        height:380px;
+
+    }
+    .ProjectsContainer{
+        display:flex;
+        flex-direction:column;
+    
+    }
+    #Projects{
+        background:none;
+        border:none;
+        margin-top:20px;
+
+    }
+    #Gallery{
+        margin-top:40px;
+    }
+    footer{
+        font-size:small;
+    }
+
+  
 }
