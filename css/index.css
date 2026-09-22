@@ -547,7 +547,10 @@ footer{
     }
     .InfoCard{
         font-size:x-small;
-        width:330px;
+        width:300px;
+    }
+    .stack img{
+        width:20px;
     }
  .emailpng img{
     width:20px;
