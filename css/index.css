@@ -441,7 +441,7 @@ footer{
     gap:20px;
     
 }
-@media(max-width:700px){
+@media(max-width:768px){
 
     .navBar{
         z-index:2;
