@@ -442,7 +442,11 @@ footer{
     
 }
 @media(max-width:768px){
+.Page{
+    margin:0;
+    padding:0;
 
+}
     .navBar{
         z-index:2;
     }
