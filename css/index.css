@@ -486,6 +486,7 @@ footer{
     }
     #menu-toggle{
         display:block;
+        width:15px;
 
     }
     .links{
@@ -547,7 +548,7 @@ footer{
     }
     .InfoCard{
         font-size:x-small;
-        width:300px;
+        width:280px;
     }
     .stack img{
         width:20px;
@@ -573,7 +574,7 @@ footer{
         width:300px;
     }
     .ProjectCard{
-        width:300px;
+        width:280px;
         font-size:small;
         height:380px;
 
