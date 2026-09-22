@@ -502,16 +502,21 @@ footer{
     }
   
     .ProfileImg img{
-        width:200px;
-        height:200px;
+        width:100px;
+        height:100px;
         border-radius:50px 50px 50px 50px;
     }
     .Profile{
-        font-size:0.8em;
-        width:400px;
+        font-size:small;
+        width:350px;
     }
     .socials img{
         width:40px;
+    }
+    .freelance img{
+        width:30px;
+        height:30px;
+
     }
     #About{
          padding-left:20px;
@@ -530,16 +535,31 @@ footer{
         align-items:center;
     }
     .InfoCard{
-        font-size:small;
-        width:400px;
+        font-size:x-small;
+        width:330px;
     }
- 
+ .emailpng img{
+    width:20px;
+ }
+ .locationpng img{
+    width:20px;
+ }
+ .edupng img{
+    width:20px;
+ }
+ .MoreAcademics button{
+    padding:10px;
+    font-size:small;
+ }
+ .MoreAcademics button img{
+    width:10px;
+ }
     .AcademicCard{
         font-size:medium;
-        width:400px;
+        width:300px;
     }
     .ProjectCard{
-        width:350px;
+        width:300px;
         font-size:small;
         height:380px;
 
